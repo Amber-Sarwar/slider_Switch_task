@@ -1,0 +1,251 @@
+/* === YOUR ORIGINAL CSS (kept as-is) === */
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background:linear-gradient(136deg,  #ff3c3c,rgb(255, 0, 140),rgb(54, 16, 189));
+  background-repeat: no-repeat; 
+}
+.container{
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper-slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(38, 0, 73, 0.5);
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+.wrapper-slider input[type="radio"] {
+  display: none;
+}
+
+.wrapper-slider .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 0;
+}
+
+.wrapper-slider .img img {
+  height: 100%;
+  width: 100%;
+  transition: clip-path 1s ease;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  clip-path: circle(50% at 0% 100%);
+  transition: all 0.7s;
+}
+
+/* Active slide */
+#one:checked ~ .img-1,
+#two:checked ~ .img-2,
+#three:checked ~ .img-3,
+#four:checked ~ .img-4,
+#five:checked ~ .img-5 ,
+#six:checked ~ .img-6 ,
+#seven:checked ~ .img-7,
+#eight:checked ~ .img-8,
+#nine:checked ~ .img-9,
+#ten:checked ~ .img-10,
+#eleven:checked ~ .img-11,
+#twelve:checked ~ .img-12,
+#thirteen:checked ~ .img-13{
+  clip-path: circle(150% at 0% 100%);
+  opacity: 1;
+  z-index: 1;
+}
+
+#one:checked ~ .img-1 img,
+#two:checked ~ .img-2 img,
+#two:checked ~ .img-1 img,
+#three:checked ~ .img-3 img,
+#three:checked ~ .img-2 img,
+#three:checked ~ .img-1 img,
+#four:checked ~ .img-4 img,
+#four:checked ~ .img-3 img,
+#four:checked ~ .img-2 img,
+#four:checked ~ .img-1 img,
+#five:checked ~ .img-5 img ,
+#five:checked ~ .img-4 img ,
+#five:checked ~ .img-3 img ,
+#five:checked ~ .img-2 img ,
+#five:checked ~ .img-1 img, 
+#six:checked ~ .img-5 img ,
+#six:checked ~ .img-4 img ,
+#six:checked ~ .img-3 img ,
+#six:checked ~ .img-2 img ,
+#six:checked ~ .img-1 img, 
+#six:checked ~ .img-6 img ,
+#seven:checked ~ .img-7 img ,
+#seven:checked ~ .img-6 img ,
+#seven:checked ~ .img-5 img ,
+#seven:checked ~ .img-4 img ,
+#seven:checked ~ .img-3 img ,
+#seven:checked ~ .img-2 img ,
+#seven:checked ~ .img-1 img,
+#eight:checked ~ .img-8 img ,
+#eight:checked ~ .img-7 img ,
+#eight:checked ~ .img-6 img ,
+#eight:checked ~ .img-5 img ,
+#eight:checked ~ .img-4 img ,
+#eight:checked ~ .img-3 img ,
+#eight:checked ~ .img-2 img ,
+#eight:checked ~ .img-1 img,
+#nine:checked ~ .img-9 img ,
+#nine:checked ~ .img-8 img ,
+#nine:checked ~ .img-7 img ,
+#nine:checked ~ .img-6 img ,
+#nine:checked ~ .img-5 img ,
+#nine:checked ~ .img-4 img ,
+#nine:checked ~ .img-3 img ,
+#nine:checked ~ .img-2 img ,
+#nine:checked ~ .img-1 img,
+#ten:checked ~ .img-10 img ,
+#ten:checked ~ .img-9 img ,
+#ten:checked ~ .img-8 img ,
+#ten:checked ~ .img-7 img ,
+#ten:checked ~ .img-6 img ,
+#ten:checked ~ .img-5 img ,
+#ten:checked ~ .img-4 img ,
+#ten:checked ~ .img-3 img ,
+#ten:checked ~ .img-2 img ,
+#ten:checked ~ .img-1 img
+{
+  clip-path: circle(150% at 0% 100%);
+}
+
+.sliders {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+}
+
+.sliders label {
+  height:13px;
+  width: 13px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 0 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sliders label:hover ,.sliders label:active{
+  background:#fff;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #230049;
+  background-color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 50%;
+  user-select: none;
+  transition: all 0.3s;
+}
+.arrow:hover {
+  background-color: rgb(255, 255, 255);
+  opacity: .5;
+}
+.arrow.left {
+  left: 7px;
+}
+.arrow.right {
+  right: 7px;
+}
+#one:checked ~ .sliders label[for="one"],
+#two:checked ~ .sliders label[for="two"],
+#three:checked ~ .sliders label[for="three"],
+#four:checked ~ .sliders label[for="four"],
+#five:checked ~ .sliders label[for="five"],
+#six:checked ~ .sliders label[for="six"],
+#seven:checked ~ .sliders label[for="seven"],
+#eight:checked ~ .sliders label[for="eight"],
+#nine:checked ~ .sliders label[for="nine"],
+#ten:checked ~ .sliders label[for="ten"]
+{
+  background-color: #fff;
+  border-color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 16px; 
+  }
+  .wrapper-slider {
+    width: 95vw;
+    max-width: 800px;
+    height: auto;         
+    aspect-ratio: 16 / 10;   
+  }
+  .arrow {
+    font-size: 1.6rem;
+    padding: 9px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .wrapper-slider {
+    width: 96vw;
+    aspect-ratio: 16 / 10;
+  }
+  .sliders {
+    gap: 8px;
+    bottom: 16px;
+  }
+  .sliders label {
+    height: 11px;
+    width: 11px;
+  }
+  .arrow {
+    font-size: 1.4rem;
+    padding: 8px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .wrapper-slider {
+    width: 98vw;
+    aspect-ratio: 16 / 10;
+  }
+  .sliders label {
+    height: 9px;
+    width: 9px;
+    border-width: 2px;
+  }
+  .arrow {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
+}
